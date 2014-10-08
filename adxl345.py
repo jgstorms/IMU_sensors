@@ -41,7 +41,7 @@ class SensorADXL345(object):
     def standby(self, stdby = True):
         """Put device into standby mode or back to measure mode
         The device is in standby mode after power up."""
-        self.bus.write_byte_data(self.addr, 0x2d, 0x08 if stdby else 0)
+        self.bus.write_byte_data(self.addr, 0x2d, 0 if stdby else 0x08)
 
     def data_format(self, fullres, range):
         """Set data format
